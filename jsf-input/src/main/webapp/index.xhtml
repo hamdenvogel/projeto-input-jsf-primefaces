@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+     <h:form>
+    <h:head>
+        <title>Leitor de frases</title>
+    </h:head>
+    <h:body>
+       #{info.message}
+       <p:panel header="Leitor de frases para palavras e ocorrência de palavras" style="width:90%">				
+			 <h:panelGrid columns="1" cellpadding="5" style="margin: 0 auto;">
+		        <p:outputLabel value="Insira a frase" />
+		        
+		        <p:inputText id="myInput" value="#{fraseMB.inputFrase}" />
+      			<p:commandButton value="Submit" actionListener="#{fraseMB.submit}" update="@form"/>      
+		       			  	
+		       <p:outputLabel value ="#{fraseMB.palavrasRetornadas}" />      
+	    	</h:panelGrid>
+		</p:panel>		
+    </h:body>
+     </h:form> 
+</html>
